@@ -1,0 +1,83 @@
+Chronology : HLD -> LLD -> Actual Code
+
+HLD(the high level overall architecture)
+LLD(Underlying class and objects and their interaction)
+Actual Code (DSA or concepts used)
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+LOW LEVEL DESIGN
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+
+LLD - Low Level Design majorly focus on classes and objects within a system and their efficient and optimal design.
+
+Goal is :
+  - To write clean code
+  - Code should be flexible and maintainable
+  - Code should be easy to test
+  - There is no one correct code, there can be multiple approaches to it
+
+Categories (sometimes we have problems and we have predifined patterns to solve it which falls under one of these categories)
+
+1. Creational
+2. Structural
+3. Behavioral
+
+Note: Knowing the pattern is not mandatory, this is to avoid reinventing a new pattern which is solvable through a preexisting pattern
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Catgories of Design Patterns
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+
+1. Creational Design Patterns
+   - Deal with object creation mechanisms
+   - Aim to create objects in a manner suitable to the situation
+   - Examples: Singleton, Builder, Factory, Abstract Factory, Object Pool, Prototype
+
+2. Structural Design Patterns (Skeleton design)
+    - Deal with object composition and relationships between objects
+    - Aim to simplify the structure by identifying relationships
+    - Examples: Adapter, Composite, Proxy, Flyweight, Facade, Bridge, Decorator
+
+3. Behavioral Design Patterns (Skeleton behavior)
+    - Deal with communication between objects
+    - Aim to define how objects interact and distribute responsibility
+    - Examples: Observer, Strategy, Command, Chain of Responsibility, Mediator, Memento, State, Visitor, Template Method, Iterator
+
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+Relationships between Classes/Objects
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+1. is-a : This is nothing but inheritance
+                   Vehicle
+            is-a   /     \  is-a
+                Car       Truck
+
+2. has-a : This is nothing but Association(A link between two objects)
+                 Car
+          has-a /   \ has-a
+             Engine  Wheel
+
+    Association are of two types:
+       1. Aggregation : A weak association where the child can exist independently of the parent
+                Example: Library has Books, but Books can exist without the Library
+                Code:
+                Public class Library {
+                    private List<Book> books;
+                }
+
+       2. Composition : A strong association where the child cannot exist independently of the parent
+                Example: A House has Rooms, but Rooms cannot exist without the House
+                Code:
+                Public class House {
+                    private List<Room> rooms;
+                    public House() {
+                        rooms = new List<Room>();
+                        rooms.add(new Room("Living Room"));
+                        rooms.add(new Room("Bedroom"));
+                    }
+
+                }
+
