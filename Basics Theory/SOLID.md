@@ -12,9 +12,9 @@ SOLID is a set of five object-oriented design principles designed to make softwa
 ## Advantages
 1. Avoids duplicate code  
 2. Easy to maintain codebase  
-3. Improves readability  
+3. Improves readability
 4. Enables flexible software development  
-5. Reduces complexity  
+5. Reduces complexity
 
 ---
 
