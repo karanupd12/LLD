@@ -17,6 +17,7 @@ class Rectangle implements Shape{
         System.err.println("This is Rectangle");
     }
 }
+
 class Square implements Shape{
     @Override
     public void draw(){
